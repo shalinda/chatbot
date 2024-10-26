@@ -1,0 +1,6 @@
+node_modules/
+deploy/aws
+python/__pycache__/
+deploy/push_to_docker_repo.sh
+deploy/go-remote.sh
+deploy/build_remote.sh

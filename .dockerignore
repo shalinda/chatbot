@@ -1,0 +1,6 @@
+# Ignore the following files and directories
+deploy
+Dockerfile
+package-lock.json
+python
+

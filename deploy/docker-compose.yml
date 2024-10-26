@@ -1,0 +1,31 @@
+services:
+  chatbot_app:
+    image: chatbot_app
+    container_name: chatbot_app
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - int_network
+ #     - int-network1
+  llm_app:
+    image: llm_app
+    container_name: llm_app
+    hostname: llm_app
+    restart: always
+    volumes:
+      - ./aws:/root/.aws
+
+    ports:
+      - "3001:3001"
+    networks:
+      - int_network
+ #     - int-network1
+networks:
+  int_network:
+    driver: bridge
+    #external: true
+    #name: ext_network
+#  int-network1:
+#    name: int-network1
+
