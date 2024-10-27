@@ -2,7 +2,7 @@
 
 This project consists of a chatbot application implemented using a **JavaScript client**, **Node.js (Express)** backend, and a **Python microservice** that communicates with **AWS Bedrock** to generate responses using **Anthropic Claude**.
 
-The project is set up with a **microservice architecture** using **Nginx as a reverse proxy** with **OAuth2 Proxy** for authentication.
+The project is set up with a **microservice architecture** using **Nginx as a reverse proxy** with **OAuth2 Proxy, Keycloak** for authentication.
 
 ## Table of Contents
 - [Architecture Overview](#architecture-overview)
