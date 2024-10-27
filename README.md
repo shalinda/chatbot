@@ -21,7 +21,7 @@ The project is set up with a **microservice architecture** using **Nginx as a re
 - **JavaScript Client**: The client sends user inputs to the backend through an HTTP request.
 - **Node.js (Express) Backend**: Receives requests from the client, forwards them to the Python microservice for processing, and streams back the responses using **Server-Sent Events (SSE)**.
 - **Python Microservice**: Communicates with **AWS Bedrock** to use **Anthropic Claude-3** for generating text responses based on the input.
-- **Nginx Reverse Proxy with OAuth2 Proxy**: Handles authentication and routes traffic between services.
+- **Nginx Reverse Proxy with OAuth2 Proxy with Keycloak**: Handles authentication and routes traffic between services.
 
 ---
 
@@ -33,8 +33,8 @@ The project is set up with a **microservice architecture** using **Nginx as a re
 - **AI Model**: AWS Bedrock - Anthropic Claude-3
 - **Containerization**: Docker (if applicable)
 - **Communication**: SSE (Server-Sent Events), HTTP
-- **Cloud Services**: AWS Bedrock, Anthropic Claude API
-- **Authentication**: OAuth2 Proxy, Nginx
+- **LLM Services**: AWS Bedrock, Anthropic Claude API
+- **Authentication**: OAuth2 Proxy, with Keycloak
 
 ---
 
@@ -43,7 +43,7 @@ The project is set up with a **microservice architecture** using **Nginx as a re
 ### Prerequisites
 
 - **Nginx** installed and configured as a reverse proxy
-- **OAuth2 Proxy** configured for authentication
+- **OAuth2 Proxy, KeyCloak** configured for authentication
 - **AWS CLI** configured with the necessary credentials and permissions to access AWS Bedrock
 
 ### Clone the Repository
