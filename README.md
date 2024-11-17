@@ -3,7 +3,7 @@
 
 ![Screenshot](img/screen1.png)
 
-This is an interactive chat application. When knoweldge base dropdown is selected it uses generic anthropic.claude-3-haiku-20240307-v1:0 model from bedrock to search and provide the response. User are able to build knowledge bases by preloading pdf documents to kb folder. Any Q n A against the knwoeldge base.
+This is an interactive chat application. When knoweldge base dropdown is selected it uses generic anthropic.claude-3-haiku-20240307-v1:0 model from bedrock to search and provide the response. User is able to build knowledge bases by preloading pdf documents to kb folder. Any Q n A against the knwoeldge base.
 
 ## Building knowledge base
 
@@ -243,7 +243,4 @@ SSE is used to provide real-time communication between the server and client.
    docker-compose up
    ```
 
----
-
-
-This merged documentation provides a detailed guide for understanding the chatbot's architecture, API endpoints, database structure, Docker setup, and SSE communication. 
+ 
