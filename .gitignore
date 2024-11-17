@@ -1,7 +1,6 @@
 node_modules/
 deploy/aws
-python/__pycache__/
-python/app/__pycache__/
+__pycache__/
 python/app/__init__
 deploy/postgres_data/
 deploy/push_to_docker_repo.sh
