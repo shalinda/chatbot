@@ -1,5 +1,5 @@
-# Use the official Python 3.8.20 image as the base image
-FROM python:3.8.20-slim
+# Use the official Python 3.11 image as the base image
+FROM python:3.11-slim
 
 # Set the working directory in the container
 WORKDIR /app
@@ -24,5 +24,6 @@ RUN pip install --no-cache-dir -r requirements.txt || true
 EXPOSE 3001
 
 # Run the app using Gunicorn with 4 worker processes
-CMD ["gunicorn", "--bind", "0.0.0.0:3001", "app:app", "--workers=4"]
-# ENTRYPOINT ["python", "app.py"]
+CMD ["gunicorn", "--bind", "0.0.0.0:3001", "wsgi:app", "--workers=4"]
+
+

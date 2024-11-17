@@ -1,6 +1,6 @@
 # Ignore the following files and directories
-deploy
 Dockerfile
-package-lock.json
-python
-node_modules
+__pycache__/
+venv
+list
+kb/*

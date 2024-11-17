@@ -5,12 +5,15 @@ echo "building express and py apps env $BUILD_ENV"
 
 cd ../
 echo "building back end docker image.."
-docker build --no-cache -t $IMAGE .
+if [ "$1" == "web" ]; then
+  docker build --no-cache -t $IMAGE .
+fi
 
 cd python
 echo "building back end docker image.."
-docker build --no-cache -t $IMAGE_LLM .
-
+if [ "$2" == "llm" ]; then
+  docker build --no-cache -t $IMAGE_LLM .
+fi
 
 cd ../deploy
 echo "completed building and creating docker images"

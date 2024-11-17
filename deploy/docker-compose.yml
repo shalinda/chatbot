@@ -15,12 +15,35 @@ services:
     restart: always
     volumes:
       - ./aws:/root/.aws
-
+      - ./kb:/app/kb
+      - ./config.ini:/app/config.ini
+    depends_on:
+      - postgres
     ports:
       - "3001:3001"
     networks:
       - int_network
  #     - int-network1
+
+  postgres:
+    image: ankane/pgvector  # This image includes Postgres with pgvector
+    container_name: postgres-vector
+    hostname: postgres-vector
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - int_network
+volumes:
+  postgres_data: {}
+  kb: {}
+
 networks:
   int_network:
     driver: bridge

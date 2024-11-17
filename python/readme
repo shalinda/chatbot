@@ -1,0 +1,23 @@
+// 11/15/2024
+CREATE EXTENSION IF NOT EXISTS vector;
+
+CREATE TABLE DOCUMENT (
+    id SERIAL PRIMARY KEY,
+    embedding VECTOR(1536),
+    kb TEXT,
+    file_name TEXT,
+    file_type TEXT,
+    content TEXT 
+);
+
+
+
+
+ 
+#curl -X POST -H "Content-Type: application/json" -d '{"file_path": "Amazon-com-Inc-2023-Shareholder-Letter.pdf"}' http://127.0.0.1:5000/load_documents
+curl -X POST -H "Content-Type: application/json" -d '{"file_path": "kb1"}' http://llm_app:3001/load_documents1
+curl -X POST -H "Content-Type: application/json" -d '{"kb": "kb1", "question": "How did Amazons Advertising business do in 2023?"}' http://127.0.0.1:3001/ask1
+ 
+ docker exec -it postgres-vector psql -U postgres -d mydatabase
+
+docker exec -it chatbot_app curl -X POST -H "Content-Type: application/json" -d '{"file_path": "kb2"}' --max-time 600 http://llm_app:3001/load_documents1
