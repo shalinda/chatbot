@@ -3,15 +3,18 @@
 
 ![Screenshot](img/screen1.png)
 
-This is an interactive chat application. whe no knoweldge base is selected it uses generic anthropic.claude-3-haiku-20240307-v1:0 model from bedrock to search and provide the response. User are able to build knowledge bases by preloading pdf documents to kb folder. Any Q n A against the knwoeldge base.
+This is an interactive chat application. When knoweldge base dropdown is selected it uses generic anthropic.claude-3-haiku-20240307-v1:0 model from bedrock to search and provide the response. User are able to build knowledge bases by preloading pdf documents to kb folder. Any Q n A against the knwoeldge base.
 
-## Building knowledge base.
+## Building knowledge base
 
 - Admin can upload documents to kb/knwledge base. Currently kb1 and kb2 areloaded
 - use the back end to load data /api/upload_data1
+- this uses langchain to extract the pdf content, chunch with overlap and store in postgress DOCUMENT table
+- uses amazon.titan-embed-text-v1 as the embeddings model
 - front end application requests are routed to chatbot_app node/ express application
 - based on knowledge base those requests are been served by the llm_app python app
 - /api/ask1 is internally used infer knowledge for the question being asked
+- vectorized data is fetched from postgres
 
 ## Authencation
 
