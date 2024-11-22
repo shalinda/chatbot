@@ -3,7 +3,7 @@ deploy/aws
 __pycache__/
 python/app/__init__
 deploy/postgres_data/
-deploy/push_to_docker_repo.sh
+deploy/.env
 deploy/go-remote.sh
 deploy/build_remote.sh
 python/venv
