@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOCKER_USER=siyothsoft
-DOCKER_HOST=45.32.222.104
+#DOCKER_HOST=XX.XX.XX.XXX
 #PASSWORD=XXXX comes from source .env
 IMAGE=chatbot_app
 IMAGE_LLM=llm_app
