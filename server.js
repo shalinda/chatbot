@@ -17,6 +17,11 @@ const sendSSE = (res, text) => {
   res.flushHeaders();
 };
 
+app.use((req, res, next) => {
+  // console.log('Request Headers:', req.headers); // Logs all request headers
+  next();
+});
+
 // SSE route for echo functionality
 app.get('/echo', async (req, res) => {
   const { message, kb } = req.query;

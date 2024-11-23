@@ -156,10 +156,12 @@ def ask():
 
     # Define prompt template
     SYSTEM_MESSAGE = """
-    System: Here is some important context which can help inform the questions the Human asks.
-    Make sure to not make anything up to answer the question if it is not provided in the context.
-    """
-    HUMAN_MESSAGE = "Context: {context}\n\nQuestion: {question}"
+        System: Here is some important context which can help inform the questions the Human asks.
+        Respond with a direct answer. Start your response with 'We' if referring to the service.
+        Avoid using any prefatory or unnecessary phrases.
+        """
+
+    HUMAN_MESSAGE = "Context: {context}\n\nQuestion: {question}\n\nPlease provide a short and direct answer."
 
     messages = [
         ("system", SYSTEM_MESSAGE),
@@ -169,7 +171,7 @@ def ask():
     prompt_data = ChatPromptTemplate.from_messages(messages)
 
     # Set up the language model    
-    cl_llm = ChatBedrock(model_id=MODEL_ID, client=get_bedrock_client(), model_kwargs={"temperature": 0.1, 'max_tokens': MAX_TOKEN})
+    cl_llm = ChatBedrock(model_id=MODEL_ID, client=get_bedrock_client(), model_kwargs={"temperature": 0.05, 'max_tokens': MAX_TOKEN})
 
     chain = prompt_data | cl_llm | StrOutputParser()
     chain_input = {
