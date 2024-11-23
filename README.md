@@ -1,6 +1,8 @@
 
 # Chatbot Microservices Architecture
 
+[Watch this video on YouTube](https://youtu.be/h1ZdzQD2Dcc?si=IPtZpmdLOMnW8Rgc)
+
 ![Screenshot](img/screen1.png)
 
 This is an interactive chat application. When knoweldge base dropdown is selected it uses generic anthropic.claude-3-haiku-20240307-v1:0 model from bedrock to search and provide the response. User is able to build knowledge bases by preloading pdf documents to kb folder. Any Q n A against the knwoeldge base.
