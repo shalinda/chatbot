@@ -10,3 +10,6 @@ python/venv
 python/list
 python/kb/*
 deploy/kb/
+deploy/build-all.sh
+deploy/push_to_docker_repo.sh
+deploy/rel.sh
